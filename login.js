@@ -1,17 +1,19 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("login-form");
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('login-form');
+    const errorMessage = document.getElementById('error-message');
 
-    form.addEventListener("submit", function(event) {
+    form.addEventListener('submit', function(event) {
         event.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
 
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
-
-        // You can implement actual authentication logic here
-        if (username === "yourusername" && password === "yourpassword") {
-            alert("Login successful!");
+        // Basic authentication logic (replace with your own authentication process)
+        if (username === 'user' && password === 'pass') {
+            // Redirect to the gym website's dashboard or another page
+            window.location.href = 'index.html';
         } else {
-            alert("Invalid username or password. Please try again.");
+            errorMessage.textContent = 'Invalid username or password.';
         }
     });
 });
